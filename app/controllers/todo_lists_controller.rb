@@ -1,10 +1,12 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
 
+
   # GET /todo_lists
   # GET /todo_lists.json
   def index
     @todo_lists = TodoList.all
+    @todo_items = TodoItem.all
   end
 
   # GET /todo_lists/1
@@ -56,7 +58,7 @@ class TodoListsController < ApplicationController
   def destroy
     @todo_list.destroy
     respond_to do |format|
-      format.html { redirect_to todo_lists_url, notice: 'Todo list was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: 'Todo list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +68,12 @@ class TodoListsController < ApplicationController
     def set_todo_list
       @todo_list = TodoList.find(params[:id])
     end
+
+    def set_todo_item
+      @todo_item = @todo_list.todo_items.find(params[:id])
+  end
+
+
 
     # Only allow a list of trusted parameters through.
     def todo_list_params

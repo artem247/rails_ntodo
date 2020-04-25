@@ -1,27 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todo Lists</h1>
+<h1 class="todo_list_heading">Todo Lists</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @todo_lists.each do |todo_list| %>
+<div class="index_row clearfix">
+  <h4 class="todo_list_title"> <%= link_to todo_list.title, todo_list %>
+  </h4>
+  <%= render partial: 'todo_test', locals: { todo_list: @todo_list, todo_items: @todo_items } %>
 
-  <tbody>
-    <% @todo_lists.each do |todo_list| %>
-      <tr>
-        <td><%= todo_list.title %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  
+<% end %>
+
+
 
 <br>
 
+<div class="links">
 <%= link_to 'New Todo List', new_todo_list_path %>
+</div>
