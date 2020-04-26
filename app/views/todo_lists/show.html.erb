@@ -1,17 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="back_btn"> 
+	<%= link_to todo_lists_path, class: "back_btn" do %>
+	<i class="fa fa-long-arrow-left"></i> Back to Lists
+	<% end %>
 
+ </div>
+<div class="list_header">
 <h2 class="todo_list_title"><%= @todo_list.title %></h2>
-
+<div class="list_header_links">
+	<%= link_to 'Edit List', edit_todo_list_path(@todo_list) %> |
+	<%= link_to 'Delete List', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }
+ %> 
+  
+</div>
+</div>
 <div id="todo_items_wrapper">
+	<%= form_with(model: [ @todo_list, TodoItem.new ])   do |form|  %>
+    	<%= form.text_field :content, placeholder: "New Todo",  class: :todo_text_field %>
+    	<%= form.submit "Create To-do item" , class: :create_button %>
+	<% end %>
 	<%= render @todo_list.todo_items %>
-	<div id="form">
-		<%= render "todo_items/form" %>
-	</div>
+	
 </div>
 
-<div class="links">
-	<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-	<%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" }
- %> |
-  <%= link_to 'Back', todo_lists_path %>
-</div>

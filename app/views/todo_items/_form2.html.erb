@@ -1,0 +1,6 @@
+<%= form_with do |form| %>
+    <%= form.text_field :content, placeholder: "New Todo" %>
+    <%= form.submit %>
+<% end %>
+
+<%= link_to 'Create todo item', [:create, @todo_list, @todo_item] %>

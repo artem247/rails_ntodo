@@ -1,19 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="todo_list_heading">Todo Lists</h1>
+<h1 class="todo_list_heading">SIMPLE TODO LISTS</h1>
+
+<div class="add_list text-center ">
+  <div class="add_list_btn">
+  
+    <%= link_to 'Add TODO List', new_todo_list_path  %>
+
+  </div>
+</div>
 
 <% @todo_lists.each do |todo_list| %>
 <div class="index_row clearfix">
-  <h4 class="todo_list_title"> <%= link_to todo_list.title, todo_list %>
-  </h4>
+ 
+
+  <div class="list_header">
+    <h2 class="todo_list_title"><%= link_to todo_list.title, todo_list %></h2>
+    <div class="list_header_links">
+	  <%= link_to 'Edit List', edit_todo_list_path(todo_list) %> |
+	  <%= link_to 'Delete List', todo_list_path(todo_list), method: :delete, data: { confirm: "Are you sure?" }
+    %> 
+    </div>
+  </div>
+
+  <div id="todo_items_wrapper">
+  <%= form_with(model: [ todo_list, TodoItem.new ])   do |form|  %>
+    	<%= form.text_field :content, placeholder: "New Todo",  class: :todo_text_field %>
+    	<%= form.submit "Create To-do item" , class: :create_button %>
+	<% end %>
+
   
+  <% todo_list.todo_items.each do |todo_item| %>
+  
+
+      <% if todo_item.completed? %>
+
+      <div class="complete">
+        <%= link_to complete_todo_list_todo_item_path(todo_list, todo_item.id, todo_list.id ), method: :patch do %>
+        <i class="fa fa-check"></i>
+        <% end %>
+      </div>
+
+      <div class="todo_item">
+      <p style="opacity: 0.7;"><strike><%= todo_item.content %></strike></p>
+      </div>
+
+
+
+
+      <% end %>
+  <% end %> 
+  
+  </div>
+
+  </div>
   
 <% end %>
 
-
-
-<br>
-
-<div class="links">
-<%= link_to 'New Todo List', new_todo_list_path %>
-</div>
