@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/new'
   resources :todo_lists do
     resources :todo_items do
       member do 
