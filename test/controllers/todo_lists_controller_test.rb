@@ -43,6 +43,6 @@ class TodoListsControllerTest < ActionDispatch::IntegrationTest
       delete todo_list_url(@todo_list)
     end
 
-    assert_redirected_to todo_lists_url
+    assert_redirected_to root_url
   end
 end

@@ -5,6 +5,9 @@
     <div class="col-md-6 col-md-offset-3">
         <h1 class="form_header">Sign up</h1>
         <%= form_with(model: @user, local: true , class: "user_form" )   do |f|  %>
+            
+            <%= render 'shared/error_messages' %>
+            
             <div class="form_group">
             <%= f.label :name %>
             <%= f.text_field :name, class: "input_field" %>

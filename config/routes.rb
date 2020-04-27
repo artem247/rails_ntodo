@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/new'
+  get '/signup', to:'users#new'
+  resources :users
   resources :todo_lists do
     resources :todo_items do
       member do 
