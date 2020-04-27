@@ -85,16 +85,27 @@ background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca82
 	width: 50%;
 	max-width: 750px;
 	
-	margin: 1em auto 0 auto;
-	border-radius: 7px;
+	margin: 0 auto 0 auto;
+	
 	padding: 1em 0;
 }
 
 .todo_list_heading {
-    text-align: center;
+    display: inline-block;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
     color: black;
     margin: 0;
-    font-weight: 500;
+    font-weight: 800;
+}
+
+.new_list{
+    float: right;
+}
+.new_list i {
+    font-size: 24px;
+    color: black;
+    padding: 16px;
 }
 
 .todo_list_title, .todo_list_title a {
@@ -116,6 +127,8 @@ background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca82
 }
 
 #todo_items_wrapper {
+    padding-bottom: 4em;
+
 	.row {
 		width: 100%;
 		.complete {
@@ -223,6 +236,7 @@ label {
 
 .form_header {
     padding-bottom: 20px;
+    margin-left: -2px;
 }
 
 .user_form * {
@@ -265,4 +279,20 @@ label {
         background: #cc6506;
     }
 
+}
+
+.login {
+    float: right;
+}
+
+.login a {
+    color: black
+}
+
+.pd-1 {
+    padding:  1em 0;
+}
+
+.wd-1 {
+    width: 50%;
 }

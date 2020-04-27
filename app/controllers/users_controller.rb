@@ -13,6 +13,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = current_user
+    @todo_lists = @user.todo_lists
+
+  end
+
 
 
   private

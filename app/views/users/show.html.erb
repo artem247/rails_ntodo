@@ -1,0 +1,43 @@
+
+
+<div class="lists_header">
+<h1 class="todo_list_heading"> SIMPLE TODO LISTS </h1>
+ <div class="new_list"> <%= link_to  new_todo_list_path do %>
+   <i class="fa fa-plus-circle"></i> <span>  </span>
+   <% end %> </div>
+</div>
+
+<% @todo_lists.each do |todo_list| %>
+    <div id="todo_items_wrapper">
+    
+        <div class="list_header">
+            <h2 class="todo_list_title">
+             <%=  todo_list.title %>
+            </h2>
+            <div class="list_header_links">
+	        <%= link_to 'Edit List', edit_todo_list_path(todo_list) %> |
+            <%= link_to 'Delete List', todo_list_path(todo_list), 
+            method: :delete, data: { confirm: "Are you sure?" }
+            %> 
+        </div>
+        
+        
+  </div>
+
+ 
+    <%= form_with(model: [ todo_list, TodoItem.new ])   do |form|  %>
+    	<%= form.text_field :content, placeholder: "New Todo",  class: :todo_text_field %>
+    	<%= form.submit "Create To-do item" , class: :create_button %>
+	<% end %>
+
+     <%= render todo_list.todo_items, todo_list: todo_list %>
+
+ </div>
+     
+   
+  
+  
+  
+  
+<% end %> 
+
