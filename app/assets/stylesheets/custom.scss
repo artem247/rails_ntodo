@@ -100,12 +100,27 @@ background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca82
 }
 
 .new_list{
-    float: right;
+    padding-bottom: 2em;
 }
 .new_list i {
+    align-self: center;
     font-size: 24px;
     color: black;
-    padding: 16px;
+    padding: 0.4em 0 ;
+}
+
+.new_list span {
+    align-self: center;
+    color: black;
+    font-size: 16px;
+    padding: 1em 0.5em;
+}
+
+.new_list i, span {
+    display: inline-block;
+    vertical-align: middle;
+    
+    }
 }
 
 .todo_list_title, .todo_list_title a {
