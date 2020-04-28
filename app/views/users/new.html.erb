@@ -1,4 +1,8 @@
-
+<% if !logged_in? %>
+    <div class="login">
+    <%= link_to "Existing account? — click here", login_path %> 
+    </div>
+<% end %>
 
 <div class="row">
     
