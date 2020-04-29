@@ -8,6 +8,27 @@ class TodoItemsController < ApplicationController
 		redirect_to @user
 	end
 
+	def edit
+		respond_to do |format|
+			format.html
+			format.js
+		end
+	end
+
+	def update
+		respond_to do |format|
+		  if @todo_item.update(todo_item_params)
+			format.html { redirect_to current_user }
+			format.json { render :show, status: :ok, location: @todo_item }
+		  else
+			format.html { render :edit }
+			format.json { render json: @todo_item.errors, status: :unprocessable_entity }
+		  end
+		end
+	  end
+
+
+
 	def destroy
 		if @todo_item.destroy
 			flash[:success] = "Todo List item was deleted."

@@ -1,0 +1,2 @@
+document.getElementById('<%= dom_id(@todo_item)%>').insertAdjecentHTML('afterend', "<%= j render 'inline_form', todo_item: @todo_item, todo_list: @todo_list %>")
+document.getElementById('<%= dom_id(@todo_item)%>').style.display = 'none'

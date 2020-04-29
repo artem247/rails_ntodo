@@ -1,0 +1,22 @@
+<%= form_with(model: [todo_list, todo_item],  class: "user_form", id: dom_id(todo_item, 'inline-form' ) do |form| %>
+  <% if todo_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(todo_item.errors.count, "error") %> prohibited this todo item from being saved:</h2>
+
+      <ul>
+        <% todo_item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content, class:"input_field" %>
+  </div>
+
+  <div >
+    <%= form.submit class:"submit_btn" %>
+  </div>
+<% end %>
