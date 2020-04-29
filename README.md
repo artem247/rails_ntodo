@@ -10,11 +10,36 @@ Scope of work:
 3. User can interact with todo's from different lists on the same page
 4. There is unit and integration testing, using MiniTest, but not for the whole functionality.
 5. I did redesign a UI, felt that it would benefit the end product.
+6.  SQL task (below)
 
 What's left:
 1. Proper Ajax or integration with SPA
 2. Deadlines assignment for tasks
 3. Drag'n'drop for priority
-4. SQL task
 
-# rails_ntodo
+
+## SQL Task
+1. get all statuses, not repeating, alphabetically ordered
+⋅⋅⋅*SELECT DISTINCT status FROM  tasks ORDER BY status ASC*
+2. get the count of all tasks in each project, order by tasks count descending
+...*select COUNT(id) from tasks GROUP by project_id ORDER BY COUNT(id) DESC*
+3. get the count of all tasks in each project, order by projects names
+...*select count(tasks.id) from tasks,projects where tasks.project_id=projects.id GROUP by projects.name ORDER by projects.name*
+4. get the tasks for all projects having the name beginning with "N" letter
+...*select tasks.name from tasks,projects 
+where tasks.project_id=projects.id 
+and projects.name like 'N%'*
+5. get the list of all projects containing the 'a' letter in the middle of the name, and show the tasks count near each project.
+...*select projects.name, count(tasks.id) from tasks,projects 
+where tasks.project_id=projects.id and projects.name like '%a%' GROUP by projects.name *
+6. get the list of tasks with duplicate names. Order alphabetically
+...*select name FROM tasks GROUP by name HAVING COUNT(name)> 1*
+7. get list of tasks having several exact matches of both name and status, from the project 'Garage'. Order by matches count
+...*select name FROM tasks 
+Where project_id=(SELECT id from projects where name='Garage')
+GROUP by name HAVING COUNT(name)> 1 and COUNT(status)>1 ORDER by COUNT(name),COUNT(status)*
+8. get the list of project names having more than 10 tasks in status
+'completed'. Order by project_id
+...*select projects.name FROM projects, tasks 
+GROUP by projects.name 
+HAVING COUNT(tasks.id)> 10 AND status="Completed" ORDER by project_id*
