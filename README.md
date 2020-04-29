@@ -20,16 +20,19 @@ What's left:
 
 ## SQL Task
 1. get all statuses, not repeating, alphabetically ordered
- **SELECT DISTINCT status FROM  tasks ORDER BY status ASC**
 
+ **SELECT DISTINCT status FROM  tasks ORDER BY status ASC**
+----
 
 2. get the count of all tasks in each project, order by tasks count descending
- **SELECy COUNT(id) from tasks GROUP by project_id ORDER BY COUNT(id) DESC**
 
+ **SELECT COUNT(id) from tasks GROUP by project_id ORDER BY COUNT(id) DESC**
+----
 
 3. get the count of all tasks in each project, order by projects names
- **SELECT COUNT(tasks.id) FROM tasks,projects WHERE tasks.project_id=projects.id GROUP by projects.name ORDER BY projects.name**
 
+ **SELECT COUNT(tasks.id) FROM tasks,projects WHERE tasks.project_id=projects.id GROUP by projects.name ORDER BY projects.name**
+----
 
 4. get the tasks for all projects having the name beginning with "N" letter
  **SELECT tasks.name FROM tasks,projects 
