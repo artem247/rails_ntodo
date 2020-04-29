@@ -13,7 +13,7 @@ Scope of work:
 6.  SQL task (below)
 
 What's left:
-1. Proper Ajax or integration with SPA
+1. Todo item editing
 2. Deadlines assignment for tasks
 3. Drag'n'drop for priority
 
