@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
     if logged_in?
       @user = current_user
+      redirect_to @user
     else
       @user = User.new
     end
