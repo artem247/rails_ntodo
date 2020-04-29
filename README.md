@@ -22,17 +22,17 @@ What's left:
 1. get all statuses, not repeating, alphabetically ordered
 
  **SELECT DISTINCT status FROM  tasks ORDER BY status ASC**
-----
+
 
 2. get the count of all tasks in each project, order by tasks count descending
 
  **SELECT COUNT(id) from tasks GROUP by project_id ORDER BY COUNT(id) DESC**
-----
+
 
 3. get the count of all tasks in each project, order by projects names
 
  **SELECT COUNT(tasks.id) FROM tasks,projects WHERE tasks.project_id=projects.id GROUP by projects.name ORDER BY projects.name**
-----
+
 
 4. get the tasks for all projects having the name beginning with "N" letter
  **SELECT tasks.name FROM tasks,projects 
@@ -41,15 +41,18 @@ AND projects.name LIKE 'N%'**
 
 
 5. get the list of all projects containing the 'a' letter in the middle of the name, and show the tasks count near each project.
+
  **SELECT projects.name, count(tasks.id) FROM tasks,projects 
 WHERE tasks.project_id=projects.id AND projects.name LIKE '%a%' GROUP BY projects.name**
 
 
 6. get the list of tasks with duplicate names. Order alphabetically
+
  **SELECT name FROM tasks GROUP BY name HAVING COUNT(name)> 1*
 
 
 7. get list of tasks having several exact matches of both name and status, from the project 'Garage'. Order by matches count
+
  **SELECT name FROM tasks 
 WHERE project_id=(SELECT id FROM projects WHERE name='Garage')
 GROUP BY name HAVING COUNT(name)> 1 and COUNT(status)>1 ORDER BY COUNT(name),COUNT(status)**
