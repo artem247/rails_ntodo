@@ -48,7 +48,7 @@ WHERE tasks.project_id=projects.id AND projects.name LIKE '%a%' GROUP BY project
 
 6. get the list of tasks with duplicate names. Order alphabetically
 
- **SELECT name FROM tasks GROUP BY name HAVING COUNT(name)> 1*
+ **SELECT name FROM tasks GROUP BY name HAVING COUNT(name)> 1**
 
 
 7. get list of tasks having several exact matches of both name and status, from the project 'Garage'. Order by matches count
@@ -60,6 +60,7 @@ GROUP BY name HAVING COUNT(name)> 1 and COUNT(status)>1 ORDER BY COUNT(name),COU
 
 8. get the list of project names having more than 10 tasks in status
 'completed'. Order by project_id
+
  **SELECT projects.name FROM projects, tasks 
 GROUP by projects.name 
 HAVING COUNT(tasks.id)> 10 AND status="Completed" ORDER by project_id**
