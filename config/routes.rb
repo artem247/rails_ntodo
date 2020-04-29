@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       resources :todo_items do
         member do 
           patch :complete
+          get :edit_deadline
+          patch :update_deadline
         end
       end
     end

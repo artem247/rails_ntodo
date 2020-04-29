@@ -157,7 +157,7 @@ background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca82
 			float: left;
 			p {
 				margin: 0;
-				padding: 1em;
+				padding:  1em 0;
 				color: #000000;
 				font-weight: 100;
 			}
@@ -310,4 +310,33 @@ label {
 
 .wd-1 {
     width: 50%;
+}
+
+.deadline {
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: -2em;
+    
+}
+
+.deadline-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.deadline-form select {
+    margin: 1em;
+    border-radius: 0;
+    background-color: white;
+    font-size: 120%;
+    border: 0;
+    
+}
+
+.deadline-form label {
+    font-size: 120%;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
 }

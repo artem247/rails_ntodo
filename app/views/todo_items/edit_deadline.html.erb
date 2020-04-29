@@ -1,0 +1,10 @@
+<h1 class="todo_list_title pd-1">Edit deadline for <%= @todo_item.content %></h1>
+
+<div class="user_form wd-1">
+<%= render 'deadline_form', todo_list: @todo_list, todo_item: @todo_item %>
+</div>
+
+
+<div class="list_header_links">
+<%= link_to 'Cancel', user_path %>
+</div>

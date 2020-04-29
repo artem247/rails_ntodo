@@ -43,6 +43,21 @@ class TodoItemsController < ApplicationController
 		redirect_to @user
 	end
 
+	def edit_deadline
+	end
+
+	def update_deadline
+		respond_to do |format|
+			if @todo_item.update(todo_item_params)
+			  format.html { redirect_to current_user }
+			  format.json { render :show, status: :ok, location: @todo_item }
+			else
+			  format.html { render :edit }
+			  format.json { render json: @todo_item.errors, status: :unprocessable_entity }
+			end
+		end
+	end
+
 	private
 
 	def set_todo_list
@@ -58,7 +73,7 @@ class TodoItemsController < ApplicationController
 	end
 
 	def todo_item_params
-		params[:todo_item].permit(:content)
+		params[:todo_item].permit(:content, :deadline)
 	end
 
 end
