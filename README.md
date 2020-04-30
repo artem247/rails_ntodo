@@ -11,11 +11,11 @@ Scope of work:
 4. There is unit and integration testing, using MiniTest, but not for the whole functionality.
 5. I did redesign a UI, felt that it would benefit the end product.
 6.  SQL task (below)
+7. Todo item editing
+8. Deadlines assignment for tasks
 
 What's left:
-1. Todo item editing
-2. Deadlines assignment for tasks
-3. Drag'n'drop for priority
+- Drag'n'drop for priority
 
 
 ## SQL Task
