@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 
 
 gem 'bootstrap-sass', '3.4.1'
-gem 'bootstrap-datepicker-rails'
+gem 'flatpickr_rails'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

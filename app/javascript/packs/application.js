@@ -9,8 +9,8 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import flatpickr from 'flatpickr'
-
+require("packs/custom")
+require ("controllers")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -19,3 +19,5 @@ import flatpickr from 'flatpickr'
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
