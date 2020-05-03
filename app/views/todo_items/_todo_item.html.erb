@@ -17,13 +17,13 @@
 
         <div class="complete">
         <%= link_to complete_todo_list_todo_item_path(todo_list, todo_item.id), method: :patch do %>
-            <i class="fa fa-circle-thin"></i>
+            <i class="fa fa-circle-o"></i>
         <% end %>
         </div>
 
         <%= content_tag :div, id: dom_id(todo_item) do %>
         <div class="todo_item" >
-            <p><%= todo_item.content %></p>
+            <p class="todo_item_content" ><%= todo_item.content %></p>
             
             <% if  todo_item.deadline != nil %>
             <span class="deadline">  <%= todo_item.deadline.strftime("Deadline — %A, %d of %B") %></span>

@@ -159,7 +159,7 @@ background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca82
 				margin: 0;
 				padding:  1em 0;
 				color: #000000;
-				font-weight: 100;
+				
 			}
 		}
 		.item_icon {
@@ -340,4 +340,8 @@ label {
     align-self: center;
 
     margin-right: 1em;
+}
+
+.todo_item_content {
+    font-weight: 400;   
 }
