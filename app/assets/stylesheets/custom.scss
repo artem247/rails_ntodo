@@ -19,8 +19,8 @@ body {
     min-height: 100vh;
  	
   
-background: linear-gradient(to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca8212 92%,#cc6506 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
+background: linear-gradient(to bottom, rgba(112,187,177,1) 0%, rgba(75,177,156,1) 37%, rgba(100,171,136,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+/* to bottom,  #d0ceab 9%,#bdc3b2 38%,#d4ae36 59%,#ca8212 92%,#cc6506 100%); */
 
   font-family: 'Lato', sans-serif;
 }
@@ -344,4 +344,23 @@ label {
 
 .todo_item_content {
     font-weight: 400;   
+}
+
+.editable--hidden {
+    display: none; 
+    opacity: 0;
+  }
+
+  .grabbable {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }

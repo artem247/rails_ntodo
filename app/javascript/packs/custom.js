@@ -15,5 +15,8 @@ document.addEventListener("turbolinks:load", () => {
 
 console.log("custom js file loaded");
 
+$(function(){
+    $('.sortable').sortable();
+  });
 
 

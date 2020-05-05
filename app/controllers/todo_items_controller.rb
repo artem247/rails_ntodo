@@ -11,7 +11,7 @@ class TodoItemsController < ApplicationController
 	def edit
 		respond_to do |format|
 			format.html
-			format.js
+			format.js {render 'edit' }
 		end
 	end
 
@@ -58,6 +58,12 @@ class TodoItemsController < ApplicationController
 		end
 	end
 
+	def move
+		@todo_item.insert_at(params[:position].to_i)
+    	head :ok
+	end
+
+
 	private
 
 	def set_todo_list
@@ -73,7 +79,7 @@ class TodoItemsController < ApplicationController
 	end
 
 	def todo_item_params
-		params[:todo_item].permit(:content, :deadline)
+		params[:todo_item].permit(:content, :deadline, :position)
 	end
 
 end

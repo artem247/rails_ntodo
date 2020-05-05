@@ -10,6 +10,7 @@ Rails.application.routes.draw do
           patch :complete
           get :edit_deadline
           patch :update_deadline
+          patch :move
         end
       end
     end

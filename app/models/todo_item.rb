@@ -1,6 +1,7 @@
 class TodoItem < ApplicationRecord
   belongs_to :todo_list
   validates :todo_list_id, presence: true
+  acts_as_list column: :position, scope: :todo_list
 
   def completed?
     !completed_at.blank?

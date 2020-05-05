@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 
 gem 'bootstrap-sass', '3.4.1'
 gem 'flatpickr_rails'
+gem 'acts_as_list', '~> 1.0', '>= 1.0.1'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

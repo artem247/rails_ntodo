@@ -11,6 +11,8 @@ require("channels")
 
 require("packs/custom")
 require ("controllers")
+require("jquery") 
+require("jquery-ui")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
